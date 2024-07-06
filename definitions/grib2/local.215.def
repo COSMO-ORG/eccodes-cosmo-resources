@@ -1,1 +1,107 @@
-local.78.def
+# local section MeteoSwiss
+include "grib2/local.78.def"
+
+# ATTENTION: KENDA-1 is not fully supported; the coding of KENDA-CH1 needs to be revised, before
+#            it can be fully supported  
+#------------------------------------------------------------------------------------
+# class
+# ... operational data
+constant marsClass='od';
+
+concept marsStream(unknown) {
+    # Ensemble data assimilation system
+    # ... uninitialized analysis
+    enda = {
+      typeOfGeneratingProcess = 0;
+      backgroundProcess = 2;}
+    # ... analysis increment (to be defined)
+    # ... initialized analysis (to be defined)
+    # ... first guess det (to be defined)
+    # ensemble forecast
+    enfo = {
+      typeOfGeneratingProcess = 4;}
+} : no_copy;
+
+concept marsType(unknown) {
+    # deterministic forecast or assimilation product
+    # # (a new type could be used for each productDefinitionTemplateNumber)
+    # ... instantaneous value
+    det = {
+      productDefinitionTemplateNumber = 0;}
+    # ... instantaneous value, chemical constituent
+    det = {
+      productDefinitionTemplateNumber = 40;}
+    # ... temporal accumulation
+    det = {
+      productDefinitionTemplateNumber = 8;}
+    # ... temporal accumulation, chemical constituent
+    #     COSMO and ICON define a unique parameter id for each combination of 
+    #     (discipline, parameterCategory, parameterNumber), and chemical constituent
+    det = {
+      productDefinitionTemplateNumber = 42;}
+    # ensemble forecast or assimilation product, perturbed or control member 
+    # (a new type could be used for each productDefinitionTemplateNumber)
+    # ... instantaneous value
+    ememb = {
+      productDefinitionTemplateNumber = 1;}
+    # ... instantaneous value, chemical constituent
+    ememb = {
+      productDefinitionTemplateNumber = 41;}
+    # ... temporal accumulation
+    ememb = {
+      productDefinitionTemplateNumber = 11;}
+    # ... temporal accumulation, chemical constituent
+    ememb = {
+      productDefinitionTemplateNumber = 43;}
+    # derived forecast
+    # ... instantaneous value, unweighted ensemble mean
+    emean = {
+      productDefinitionTemplateNumber = 2;
+      derivedForecast = 0;}
+    # ... instantaneous value, unweighted ensemble standard deviation
+    estdv = {
+      productDefinitionTemplateNumber = 2;
+      derivedForecast = 4;}
+} : no_copy;
+
+concept marsModel(unknown) {
+    'COSMO-1E' = {
+      generatingProcessIdentifier = 121;
+      typeOfGeneratingProcess = 4;
+      backgroundProcess = 0;}
+    'COSMO-2E' = {
+      generatingProcessIdentifier = 122;
+      typeOfGeneratingProcess = 4;
+      backgroundProcess = 0;}
+    'KENDA-1' = {
+      generatingProcessIdentifier = 121;
+      typeOfGeneratingProcess = 0;
+      backgroundProcess = 2;}
+    'KENDA-1' = {
+      generatingProcessIdentifier = 121;
+      typeOfGeneratingProcess = 2;
+      backgroundProcess = 0;}
+    'KENDA-1' = {
+      generatingProcessIdentifier = 121;
+      typeOfGeneratingProcess = 9;
+      backgroundProcess = 0;}
+    'SNOWPOLINO' = {
+      generatingProcessIdentifier = 121;
+      typeOfGeneratingProcess = 0;
+      backgroundProcess = 0;}
+    'ICON-CH1-EPS' = {
+      generatingProcessIdentifier = 141;}
+    'ICON-CH2-EPS' = {
+      generatingProcessIdentifier = 142;}
+    'KENDA-CH1' = {
+      generatingProcessIdentifier = 151;}
+} : no_copy;
+
+constant marsExpver = '0001';
+
+alias mars.class = marsClass;
+alias mars.stream = marsStream;
+alias mars.type = marsType;
+alias mars.model = marsModel;
+alias mars.expver = marsExpver;
+
