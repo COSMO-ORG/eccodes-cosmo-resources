@@ -18,7 +18,7 @@ Compatibility of the release number with the host program should be checked, if 
 
 ### Releases
 
-The release number takes the form vX.Y.Z.R, where vX.Y.Z is the version number of the associated vendor distribution of the libgrib-api, and Z an integer which is incremented each time some definition or sample is changed, and which is reset to 1 each time a new version of the vendor library is introduced. A release with a trailing 'd' signals development status; the release information identifies the target release.
+The release number takes the form vX.Y.Z.R, where vX.Y.Z is the version number of the associated vendor distribution of the eccodes library, and R an integer which is incremented each time some definition or sample is changed, and which is reset to 1 each time a new version of the vendor library is introduced. A release with a trailing 'd' signals development status; the release information identifies the target release. A release with a trailing 'm' indicates that it contains additional mars definitions for the MeteoSwiss operational data. 
 
 All production releases are tagged, the tag value being the same as the version number.
 
