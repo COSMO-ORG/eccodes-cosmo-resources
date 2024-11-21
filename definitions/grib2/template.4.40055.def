@@ -53,7 +53,8 @@ unsigned[1] generatingProcessIdentifier  : dump;
 # Please note for the GRIB key "forecastTime" in the following definition file:
 # - ecCodes version <= 2.33.0: unsigned 4-byte-integer
 # - ecCodes verision > 2.33.0:   signed 4-byte-integer => its positive range of values is approximately halved
-include "grib2/template.4.forecast_time.def"
-
+include "grib2/template.4.forecast_time.def";
+include "grib2/template.4.point_in_time.def";
+include "grib2/template.4.horizontal.def";
 
 

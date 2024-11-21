@@ -1,0 +1,15 @@
+# (C) Copyright 2005- ECMWF.
+
+# TEMPLATE 4.40184, Percentile ensemble product, optionally a composite of several source products,
+# at a horizontal level or in a horizontal layer in a continuous or non-continuous time interval
+
+include "grib2/template.4.local_parameter_with_attribute.def"
+include "grib2/template.4.local_template_configuration.def"
+include "grib2/template.4.generating_process.def"
+include "grib2/template.4.forecast_time.def"
+include "grib2/template.4.horizontal.def"
+include "grib2/template.4.local_uuid_attribute.def"
+include "grib2/template.4.local_percentile_leps.def"
+include "grib2/template.4.focalStatistics.def"
+include "grib2/template.4.local_statistical_single_range.def"
+include "grib2/template.4.local_source_products_leps_statistical_single_range.def"

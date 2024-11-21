@@ -112,3 +112,7 @@
 218 c6e_an c6e_an (old name: LM6AN)
 219 c7e_fc c7e_fc (old name:LM7MO,LEPS)
 225 225 225 (old name: SGBS1)
+230 230 STEPS-DWD (Nowcasting based on gridded data)
+231 231 KONRAD3D-EPS (Nowcasting based on storm cell objects)
+232 232 KONRAD3D-SINFONY (Nowcasting-NWP combination based on KONRAD3D-EPS and ICON-RUC)
+233 233 INTENSE (Nowcasting-NWP combination based on STEPS-DWD and ICON-RUC)

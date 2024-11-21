@@ -9128,3 +9128,19 @@
 	 parameterNumber = 24 ;
 	}
 
+#paramId: 503763
+#Mixed layer depth in ocean
+'MLD_SEA' = {
+	 discipline = 10 ;
+	 parameterCategory = 4 ;
+	 parameterNumber = 52 ;
+	}
+
+#paramId: 503764
+#Normal component of sea water velocity (normal in relation to local grid cell edge)
+'VNSEA' = {
+	 discipline = 10 ;
+	 parameterCategory = 4 ;
+	 parameterNumber = 53 ;
+	}
+
