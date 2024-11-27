@@ -22,9 +22,14 @@
 #               258 258 Botswana
 #               280 280 Namibia
 	cat >$ROOT_DIR/ln_cosmo_liste << EOF
-                80 cnmc Rome 
-                215 lssw Zurich
-		250 cosmo COnsortium for Small scale MOdelling (COSMO)
+    80 cnmc Rome
+    76 76 Moscow
+    96 96 Athens
+    200 200 ARPA-SIMC
+    220 220 Poland
+    242 242 Romania
+    215 lssw Zurich
+    250 cosmo COnsortium for Small scale MOdelling (COSMO)
 EOF
  
         cat ${PWD}/ln_cosmo_liste
