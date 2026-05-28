@@ -1,0 +1,20 @@
+# (C) Copyright 2005- ECMWF.
+
+# Template component: 4.local_percentile_leps.def
+
+# Type of ensemble forecast (255 => Missing)
+codetable[1] typeOfEnsembleForecast ('4.6.table',masterDir,localDir) = 255 : dump;
+
+# Perturbation number
+# (If the perturbation number is set to "MISSING", the product is based on all ensemble members.
+# If the perturbation number is set to a value in [1, numberOfForecastsInEnsemble],
+# the product is assigned to or associated with a single ensemble member of index perturbationNumber.)
+unsigned[4] perturbationNumber = missing() : can_be_missing,dump;
+alias number=perturbationNumber;
+
+# Number of forecasts in ensemble
+unsigned[4] numberOfForecastsInEnsemble = missing() : can_be_missing,dump;
+alias totalNumber=numberOfForecastsInEnsemble;
+
+# Percentile value (from 100% to 0%)
+unsigned[1] percentileValue = missing() : can_be_missing,dump;

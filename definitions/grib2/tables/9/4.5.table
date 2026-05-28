@@ -13,9 +13,7 @@
 10 10 Entire atmosphere
 11 11 Cumulonimbus (CB) base (m)
 12 12 Cumulonimbus (CB) top (m)
-# 13-19 Reserved
 20 20 Isothermal level (K)
-#21-99 Reserved
 100 P Isobaric surface (Pa)
 101 MSL Mean sea level
 102 HMSL Specific altitude above mean sea level (m)
@@ -31,14 +29,11 @@
 112 112 Reserved
 113 Logarithmic hybrid coordinate
 114 114 Snow level (Numeric)
-# 115- 116 Reserved
 117 117 Mixed layer depth (m)
 118 118 Hybrid height level
 119 119 Hybrid pressure level
 120 120 Pressure thickness (Pa) Validation
-# 121-149 Reserved
 150 GENV Generalized vertical height coordinate
-# 151-159 Reserved
 160 160 Depth below sea level (m)
 161 161 Depth below water surface (m)
 162 162 Lake or river bottom
@@ -46,8 +41,6 @@
 164 164 Bottom of thermally active sediment layer
 165 165 Bottom of sediment layer penetrated by thermal wave
 166 166 Mixing layer
-#167-191 Reserved
 192 192 mixed layer related to atmosphere
 193 193 mostly unstable related to atmosphere
-#194-254 Reserved for local use
 255 255 Missing

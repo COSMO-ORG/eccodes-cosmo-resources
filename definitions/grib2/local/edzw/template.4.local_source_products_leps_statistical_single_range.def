@@ -1,0 +1,113 @@
+# (C) Copyright 2005- ECMWF.
+
+# Template component: 4.local_source_products_leps_statistical_single_range.def
+
+# Source products (SP) - Total number of analyses or forecasts - NAF
+unsigned[2] SPNumberOfAnalysesOrForecasts = 0 : dump;
+
+# Source products: Repeat the following entries (53 octets) NAF times
+sourceProductList list(SPNumberOfAnalysesOrForecasts) {
+
+  # SP - Index of analysis or forecast - IAF = 1, 2, ..., NAF
+  unsigned[2] SPIndexOfAnalysisOrForecast = missing() : can_be_missing,dump;
+
+  # SP - Identification of originating/generating centre (65535 => Missing)
+  codetable[2] SPCentre ('common/c-11.table') = 65535 : dump,string_type;
+
+  # SP - Identification of originating/generating subcentre
+  unsigned[2] SPSubCentre = missing() : can_be_missing,dump;
+
+  # SP - Type of generating process (255 => Missing)
+  codetable[1] SPTypeOfGeneratingProcess ('4.3.table',masterDir,localDir) = 255 : dump;
+
+  # SP - Background generating process identifier (255 => Missing)
+  codetable[1] SPBackgroundProcess ('backgroundProcess.table',masterDir,localDir) = 255 : dump ;
+
+  # SP - Analysis or forecast generating process identifier (255 => Missing)
+  codetable[1] SPGeneratingProcessIdentifier ('generatingProcessIdentifier.table',masterDir,localDir) = 255 : dump ;
+
+  # SP - Hours of observational data cut-off after reference time
+  unsigned[2] SPHoursAfterDataCutoff = missing() : edition_specific,can_be_missing;
+
+  # SP - Minutes of observational data cut-off after reference time
+  unsigned[1] SPMinutesAfterDataCutoff = missing() : edition_specific,can_be_missing;
+
+  # SP - Significance of reference time (255 => Missing)
+  codetable[1] SPSignificanceOfReferenceTime ('1.2.table',masterDir,localDir) = 255 : dump;
+
+  # SP - Year of reference time
+  unsigned[2] SPYear = 0 ;
+
+  # SP - Month of reference time
+  unsigned[1] SPMonth = 0 ;
+
+  # SP - Day of reference time
+  unsigned[1] SPDay = 0 ;
+
+  # SP - Hour of reference time
+  unsigned[1] SPHour = 0 ;
+
+  # SP - Minute of reference time
+  unsigned[1] SPMinute = 0 ;
+
+  # SP - Second of reference time
+  unsigned[1] SPSecond = 0 ;
+
+  # SP - Indicator of unit of time range (255 => Missing)
+  codetable[1] SPIndicatorOfUnitOfTimeRange ('4.4.table',masterDir,localDir) = 255 : dump;
+
+  # SP - Forecast time in units defined by previous octet
+  signed[4] SPForecastTime = 0 : dump;
+
+  # SP - Type of ensemble forecast (255 => Missing)
+  codetable[1] SPTypeOfEnsembleForecast ('4.6.table',masterDir,localDir) = 255 : dump;
+
+  # SP - Derived forecast (255 => Missing)
+  codetable[1] SPDerivedForecast ('4.7.table',masterDir,localDir) = 255 : dump;
+
+  # SP - Perturbation number
+  unsigned[4] SPPerturbationNumber = missing() : can_be_missing,dump;
+
+  # SP - Number of forecasts in ensemble
+  unsigned[4] SPNumberOfForecastsInEnsemble = missing() : can_be_missing,dump;
+
+  # SP - Year of end of overall time interval
+  unsigned[2] SPYearOfEndOfOverallTimeInterval = 0 : edition_specific;
+
+  # SP - Month of end of overall time interval
+  unsigned[1] SPMonthOfEndOfOverallTimeInterval = 0 : edition_specific;
+
+  # SP - Day of end of overall time interval
+  unsigned[1] SPDayOfEndOfOverallTimeInterval = 0 : edition_specific;
+
+  # SP - Hour of end of overall time interval
+  unsigned[1] SPHourOfEndOfOverallTimeInterval = 0 : edition_specific;
+
+  # SP - Minute of end of overall time interval
+  unsigned[1] SPMinuteOfEndOfOverallTimeInterval = 0 : edition_specific;
+
+  # SP - Second of end of overall time interval
+  unsigned[1] SPSecondOfEndOfOverallTimeInterval = 0 : edition_specific;
+
+  # SP - Total number of data values missing in statistical process
+  unsigned[4] SPNumberOfMissingInStatisticalProcess = 0  : edition_specific;
+
+  # SP - Statistical process used to calculate the processed field from the field at each time increment during the time range (255 => Missing)
+  codetable[1] SPTypeOfStatisticalProcessing ('4.10.table',masterDir,localDir) = 255 : edition_specific;
+
+  # SP - Type of time increment between successive fields used in the statistical processing (255 => Missing)
+  codetable[1] SPTypeOfTimeIncrement ('4.11.table',masterDir,localDir) = 255 : edition_specific;
+
+  # SP - Indicator of unit of time for time range over which statistical processing is done (255 => Missing)
+  codetable[1] SPIndicatorOfUnitForTimeRange ('4.4.table',masterDir,localDir) = 255 ;
+
+  # SP - Length of the time range over which statistical processing is done in units defined by the previous octet
+  unsigned[4] SPLengthOfTimeRange = 0 ;
+
+  # SP - Indicator of unit of time for the increment between the successive fields used (255 => Missing)
+  codetable[1] SPIndicatorOfUnitForTimeIncrement ('4.4.table',masterDir,localDir) = 255 ;
+
+  # SP - Time increment between successive fields in units defined by the previous octet
+  unsigned[4] SPTimeIncrement = 0 ;
+
+  }

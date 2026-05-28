@@ -1,12 +1,13 @@
 #!/bin/ksh
 	set -e
 
+	ROOT_DIR=${PWD}
 	GRIB_API_DEF=${PWD}/grib2
 
         echo " LINKs for grib-api ${PWD}/grib2 for the following centres:"
 
 #	cat ${PWD}/ln_cosmo_list
-#	cat ${PWD}/ln_cosmo_list >$TMPDIR/ln_cosmo_liste
+#	cat ${PWD}/ln_cosmo_list >$ROOT_DIR/ln_cosmo_liste
 # add centers to below list, if wanted
 #               43 43 Brazil INMET
 #               76 76 Moscow 
@@ -20,13 +21,18 @@
 #               242 242 Romania
 #               258 258 Botswana
 #               280 280 Namibia
-	cat >$TMPDIR/ln_cosmo_liste << EOF
-                80 cnmc Rome 
-                215 lssw Zurich
-		250 cosmo COnsortium for Small scale MOdelling (COSMO)
+	cat >$ROOT_DIR/ln_cosmo_liste << EOF
+    80 cnmc Rome
+    76 76 Moscow
+    96 96 Athens
+    200 200 ARPA-SIMC
+    220 220 Poland
+    242 242 Romania
+    215 lssw Zurich
+    250 cosmo COnsortium for Small scale MOdelling (COSMO)
 EOF
  
-        cat ${TMPDIR}/ln_cosmo_liste
+        cat ${PWD}/ln_cosmo_liste
 
         
 	while read LN COUNTRY DESCRIPTION ;do
@@ -78,6 +84,6 @@ EOF
            fi
 
 
-	done <$TMPDIR/ln_cosmo_liste
+	done <$ROOT_DIR/ln_cosmo_liste
 
-#	rm $TMPDIR/ln_cosmo_liste
+#	rm $ROOT_DIR/ln_cosmo_liste

@@ -1,0 +1,67 @@
+# (C) Copyright 2005- ECMWF.
+
+# Template component: 4.local_categorical_with_label.def
+
+# Category classification (65535 => Missing)
+codetable[2] categoryClassification ('4.categoryClassification.table',masterDir,localDir) = 65535 : dump;
+
+# Category object parameter discipline (255 => Missing)
+codetable[1] categoryObjectParameterDiscipline ('0.0.table',masterDir,localDir) = 255 : dump;
+
+# Category object parameter category (255 => Missing)
+codetable[1] categoryObjectParameterCategory ('4.1.[categoryObjectParameterDiscipline:l].table',masterDir,localDir) = 255 : dump;
+
+# Category object parameter number (255 => Missing)
+codetable[1] categoryObjectParameterNumber ('4.2.[categoryObjectParameterDiscipline:l].[categoryObjectParameterCategory:l].table',masterDir,localDir) = 255 : dump;
+
+# Category object parameter identifier (can be used to specify ecCodes paramId)
+unsigned[4] categoryObjectParameterIdentifier = missing() : can_be_missing,dump;
+
+# Type of analysis of category (65535 => Missing)
+codetable[2] typeOfAnalysisOfCategory ('4.typeOfAnalysisOfCategory.table',masterDir,localDir) = 65535 : dump;
+
+# Category identifier for analysis
+unsigned[2] categoryIdentifierForAnalysis = missing() : can_be_missing,dump;
+
+# Total number of categories - NC
+unsigned[2] numberOfCategories = 0 : dump;
+
+# Categories: Repeat the following entries (22 octets) NC times
+categoryList list(numberOfCategories) {
+
+  # Index of category - IC = 1, 2, ..., NC
+  unsigned[2] indexOfCategory = missing() : can_be_missing,dump;
+  
+  # Level of category
+  signed[2] levelOfCategory = missing() : can_be_missing,dump;
+  
+  # Label of category (65535 => Missing)
+  codetable[2] labelOfCategory ('4.labelOfCategory.table',masterDir,localDir) = 65535 : dump;
+  
+  # Type of category object parameter interval (255 => Missing)
+  codetable[1] typeOfCategoryObjectParameterInterval ('4.91.table',masterDir,localDir) = 255 : dump;
+  
+  # Scale factor of lower limit of object parameter interval
+  signed[1] scaleFactorOfLowerLimit = missing() : can_be_missing,dump;
+  
+  # Scaled value of lower limit of object parameter interval
+  signed[4] scaledValueOfLowerLimit = missing() : can_be_missing,dump;
+  
+  # Scale factor of upper limit of object parameter interval
+  signed[1] scaleFactorOfUpperLimit = missing() : can_be_missing,dump;
+  
+  # Scaled value of upper limit of object parameter interval
+  signed[4] scaledValueOfUpperLimit = missing() : can_be_missing,dump;
+  
+  # Indicator of unit of time interval for category (255 => Missing)
+  codetable[1] indicatorOfUnitOfTimeIntervalForCategory ('4.4.table',masterDir,localDir) = 255 : dump;
+  
+  # Time interval for category in units defined by previous octet
+  signed[4] timeIntervalForCategory = missing() : can_be_missing,dump;
+
+  alias scaleFactorOfFirstLimit = scaleFactorOfLowerLimit;
+  alias scaledValueOfFirstLimit = scaledValueOfLowerLimit;
+  alias scaleFactorOfSecondLimit = scaleFactorOfUpperLimit;
+  alias scaledValueOfSecondLimit = scaledValueOfUpperLimit;
+
+}

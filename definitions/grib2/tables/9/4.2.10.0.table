@@ -48,8 +48,6 @@
 46 46 2-dim spectral energy density (m2 s)
 47 47 Frequency spectral energy density (m2 s)
 48 48 Directional spectral energy density (-)
-# 46-191 Reserved 
-# 192-254 Reserved for local use
 192 192 total wave direction (degree true)
 193 193 wind sea period (s)
 194 194 swell period (s)

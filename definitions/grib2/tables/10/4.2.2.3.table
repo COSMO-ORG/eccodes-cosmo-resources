@@ -22,8 +22,6 @@
 20 20 Column-integrated soil moisture (kg m-2)
 21 21 Soil ice (kg m-3)
 22 22 Column-integrated soil ice (kg m-2)
-# 23-191 Reserved
-# 192-254 Reserved for local use
 192 192 sum of contributions to evaporation (kg m**-2)
 193 193 total transpiration from all soil layers (kg m**-2)
 194 194 total forcing at soil surface (W m**-2)

@@ -16,7 +16,8 @@ transient addEmptySection2 = 0;
 if ( addEmptySection2 == 0 ) {
 
     if ( grib2LocalSectionPresent==1 or ( section2Length>5 or new() )) {
-        alias section2Used=one;
+        #geaendert mit 2.33.0: alias section2Used=one;
+        alias section2Used=true;
 
         if(productionStatusOfProcessedData == 4 || productionStatusOfProcessedData == 5) {
             # This is TIGGE-LAM because of the productionStatusOfProcessedData and the non-empty section 2

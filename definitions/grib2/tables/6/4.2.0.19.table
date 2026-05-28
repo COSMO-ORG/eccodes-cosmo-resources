@@ -26,8 +26,6 @@
 24 24 Convective turbulent kinetic energy - validation (J kg-1)
 25 25 Weather Interpretation ww (WMO) - validation (-)
 26 26 Convective outlook (Code table 4.224)
-# 27-191 Reserved 
-# 192-254 Reserved for local use
 192 192 Tendency of turbulent kinetic energy (m s**-1)
 193 193 Coriolis parameter (s**-1)
 194 194 Kombination Niederschlag-Bewoelkung-Blauthermik (283..407) (1)

@@ -26,8 +26,6 @@
 24 24 Anisotropy of sub-gridscale orography (Numeric)
 25 25 Natural logarithm of pressure in Pa (Numeric)
 26 26 Exner pressure (Numeric)
-# 27-191 Reserved
-# 192-254 Reserved for local use
 192 192 Pressure perturbation (Pa)
 193 193 u-momentum flux due to SSO-effects (N m**-2)
 194 194 v-momentum flux due to SSO-effects (N m**-2)

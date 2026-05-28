@@ -32,8 +32,6 @@
 30 30 Deciduous forest cover (Proportion)
 31 31 Normalized differential vegetation index (NDVI) (Numeric)
 32 32 Root depth of vegetation (m)
-# 33-191 Reserved
-# 192-254 Reserved for local use
 192 192 ratio of monthly mean NDVI (normalized differential vegetation index) to annual maximum (1)
 193 193 Latent heat flux from bare soil (W m**-2)
 194 194 Latent heat flux from plants (W m**-2)

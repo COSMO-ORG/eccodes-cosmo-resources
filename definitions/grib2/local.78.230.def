@@ -1,0 +1,292 @@
+# Copyright 2005-2007 ECMWF
+#
+# Licensed under the GNU Lesser General Public License which
+# incorporates the terms and conditions of version 3 of the GNU
+# General Public License.
+# See LICENSE and gpl-3.0.txt for details.
+#
+# START 1/local use section ------------------------------------------------------
+# LOCAL DWD 230
+# manually edited by sborcher
+#
+# local use section 2 of DWD (Model composition)
+# --------------------------------------------------------------------------
+#
+########################################################
+#                                                      #
+#                   Template Layout                    #
+#                                                      #
+########################################################
+#
+# - Total number of keys in this template:   80
+# - Total length of this template in octets: 168
+#
+# Keys marked with * are adopted from local templates 252, 253 and 254
+#
+# No.  Key name                                   Length (Octets)  Position (Octets)  Default value  Table
+#---------------------------------------------------------------------------------------------------------
+#  1   localProductionSystem                      2                  1 -   2          0              2.230
+#  2   localHostIdentifier *                      2                  3 -   4          0
+#  3   localCreationDateYear *                    2                  5 -   6          0
+#  4   localCreationDateMonth *                   1                  7 -   7          0
+#  5   localCreationDateDay *                     1                  8 -   8          0
+#  6   localCreationDateHour *                    1                  9 -   9          0
+#  7   localCreationDateMinute *                  1                 10 -  10          0
+#  8   localCreationDateSecond *                  1                 11 -  11          0
+#  9   localCreationDateMillisecond               2                 12 -  13          0
+# 10   localValidityDateYear *                    2                 14 -  15          0 
+# 11   localValidityDateMonth *                   1                 16 -  16          0
+# 12   localValidityDateDay *                     1                 17 -  17          0
+# 13   localValidityDateHour *                    1                 18 -  18          0
+# 14   localValidityDateMinute *                  1                 19 -  19          0
+# 15   localValidityDateSecond *                  1                 20 -  20          0
+# 16   localValidityDateMillisecond               2                 21 -  22          0
+# 17   localNumberOfExperiment *                  2                 23 -  24          0
+# 18   localInformationNumber *                   2                 25 -  26          0
+# 19   localVersionNumber *                       2                 27 -  28          0
+# 20   localTypeOfEnsembleForecast *              2                 29 -  30          0
+# 21   localTypeOfEnsembleProductGeneration *     2                 31 -  32          0
+# 22   localTypeOfEnsemblePostprocessing *        2                 33 -  34          0 
+# 23   localOriginOfProduct                       2                 35 -  36          0              2.231
+# 24   localNumberOfModelComponentsInUse          1                 37 -  37          0
+# 25   localDrivingModelComponent                 2                 38 -  39          0              2.231.[localOriginOfProduct]
+# 26   local2ndModelComponent                     2                 40 -  41          0              2.231.[localOriginOfProduct]
+# 27   local3rdModelComponent                     2                 42 -  43          0              2.231.[localOriginOfProduct]
+# 28   local4thModelComponent                     2                 44 -  45          0              2.231.[localOriginOfProduct]
+# 29   local5thModelComponent                     2                 46 -  47          0              2.231.[localOriginOfProduct]
+# 30   local6thModelComponent                     2                 48 -  49          0              2.231.[localOriginOfProduct]
+# 31   local7thModelComponent                     2                 50 -  51          0              2.231.[localOriginOfProduct]
+# 32   local8thModelComponent                     2                 52 -  53          0              2.231.[localOriginOfProduct]
+# 33   localMeaningOfModelVersion                 2                 54 -  55          0              2.232
+# 34   localModelVersionMajor                     1                 56 -  56          0
+# 35   localModelVersionMinor                     1                 57 -  57          0
+# 36   localModelVersionPatch                     1                 58 -  58          0
+# 37   localProductionContext                     2                 59 -  60          0              2.233
+# 38   localProductionNote                        2                 61 -  62          0              2.234
+# 39   localProject                               2                 63 -  64          0              2.235
+# 40   localMeaningOfConsecutiveNumbering         2                 65 -  66          0              2.236
+# 41   localLastConsecutiveNumber                 4                 67 -  70          0
+# 42   localConsecutiveNumber                     4                 71 -  74          0
+# 43   localNumberOfProductHistoryEventsInUse     1                 75 -  75          0
+# 44   local1stProductHistoryEvent                2                 76 -  77          0              2.237
+# 45   local2ndProductHistoryEvent                2                 78 -  79          0              2.237         
+# 46   local3rdProductHistoryEvent                2                 80 -  81          0              2.237
+# 47   local4thProductHistoryEvent                2                 82 -  83          0              2.237
+# 48   localProductVersionNumber                  2                 84 -  85          1
+# 49   localNumberOfAttributesInUse               1                 86 -  86          0
+# 50   localMeaningOf1stAttribute                 2                 87 -  88          0              2.238
+# 51   local1stAttribute                          2                 89 -  90          0              2.238.[localMeaningOf1stAttribute]
+# 52   localMeaningOf2ndAttribute                 2                 91 -  92          0              2.238              
+# 53   local2ndAttribute                          2                 93 -  94          0              2.238.[localMeaningOf2ndAttribute]
+# 54   localNumberOfNumericalAttributesInUse      1                 95 -  95          0
+# 55   localMeaningOf1stNumericalAttribute        2                 96 -  97          0              2.238
+# 56   local1stNumericalAttribute                 2                 98 -  99          0              2.238.[localMeaningOf1stNumericalAttribute]
+# 57   localScaleFactorOf1stNumericalAttribute    1                100 - 100          0
+# 58   localScaledValueOf1stNumericalAttribute    4                101 - 104          0
+# 59   localMeaningOf2ndNumericalAttribute        2                105 - 106          0              2.238
+# 60   local2ndNumericalAttribute                 2                107 - 108          0              2.238.[localMeaningOf2ndNumericalAttribute]
+# 61   localScaleFactorOf2ndNumericalAttribute    1                109 - 109          0
+# 62   localScaledValueOf2ndNumericalAttribute    4                110 - 113          0
+# 63   localNumberOfUUIDAttributesInUse           1                114 - 114          0
+# 64   localMeaningOf1stUUIDAttribute             2                115 - 116          0              2.238
+# 65   local1stUUIDAttribute                      16               117 - 132          "00000000000000000000000000000000"
+# 66   localMeaningOf2ndUUIDAttribute             2                133 - 134          0              2.238
+# 67   local2ndUUIDAttribute                      16               135 - 150          "00000000000000000000000000000000"
+# 68   localMeaningOfDateAttribute                2                151 - 152          0              2.238
+# 69   localDateAttributeYear                     2                153 - 154          0
+# 70   localDateAttributeMonth                    1                155 - 155          0
+# 71   localDateAttributeDay                      1                156 - 156          0
+# 72   localDateAttributeHour                     1                157 - 157          0
+# 73   localDateAttributeMinute                   1                158 - 158          0
+# 74   localDateAttributeSecond                   1                159 - 159          0
+# 75   localDateAttributeMillisecond              2                160 - 161          0
+# 76   localGRIBMessageGeneratedBySoftwarePackage 2                162 - 163          0              2.239
+# 77   localMeaningOfSoftwarePackageVersion       2                164 - 165          0              2.239.[localGRIBMessageGeneratedBySoftwarePackage]
+# 78   localSoftwarePackageVersionMajor           1                166 - 166          0
+# 79   localSoftwarePackageVersionMinor           1                167 - 167          0
+# 80   localSoftwarePackageVersionPatch           1                168 - 168          0
+#---------------------------------------------------------------------------------------------------------
+
+
+alias grib2LocalSectionNumber = localDefinitionNumber : dump;
+
+########################################################
+#                                                      #
+#                 Template Definition                  #
+#                                                      #
+########################################################
+
+#----------------------------------------------------------------------------------------
+#
+# Production system:
+#
+codetable[2] localProductionSystem ('2.230.table',masterDir,localDir) = 0  : dump;
+#
+# Keys from local templates 252, 253 and 254 for backward compatibility:
+#
+unsigned[2]  localHostIdentifier                  = 0  : dump;
+unsigned[2]  localCreationDateYear                = 0  : dump;
+unsigned[1]  localCreationDateMonth               = 0  : dump;
+unsigned[1]  localCreationDateDay                 = 0  : dump;
+unsigned[1]  localCreationDateHour                = 0  : dump;
+unsigned[1]  localCreationDateMinute              = 0  : dump;
+unsigned[1]  localCreationDateSecond              = 0  : dump;
+unsigned[2]  localCreationDateMillisecond         = 0  : dump;
+unsigned[2]  localValidityDateYear                = 0  : dump;
+unsigned[1]  localValidityDateMonth               = 0  : dump;
+unsigned[1]  localValidityDateDay                 = 0  : dump;
+unsigned[1]  localValidityDateHour                = 0  : dump;
+unsigned[1]  localValidityDateMinute              = 0  : dump;
+unsigned[1]  localValidityDateSecond              = 0  : dump;
+unsigned[2]  localValidityDateMillisecond         = 0  : dump;
+unsigned[2]  localNumberOfExperiment              = 0  : dump;
+unsigned[2]  localInformationNumber               = 0  : dump;
+unsigned[2]  localVersionNumber                   = 0  : dump;
+unsigned[2]  localTypeOfEnsembleForecast          = 0  : dump;
+unsigned[2]  localTypeOfEnsembleProductGeneration = 0  : dump;
+unsigned[2]  localTypeOfEnsemblePostprocessing    = 0  : dump;
+#
+# Model composition used to generate the product:
+#
+codetable[2] localOriginOfProduct ('2.231.table',masterDir,localDir)                                = 0  : dump;
+unsigned[1]  localNumberOfModelComponentsInUse                                                      = 0  : dump;
+codetable[2] localDrivingModelComponent ('2.231.[localOriginOfProduct:l].table',masterDir,localDir) = 0  : dump;
+codetable[2] local2ndModelComponent ('2.231.[localOriginOfProduct:l].table',masterDir,localDir)     = 0  : dump;
+codetable[2] local3rdModelComponent ('2.231.[localOriginOfProduct:l].table',masterDir,localDir)     = 0  : dump;
+codetable[2] local4thModelComponent ('2.231.[localOriginOfProduct:l].table',masterDir,localDir)     = 0  : dump;
+codetable[2] local5thModelComponent ('2.231.[localOriginOfProduct:l].table',masterDir,localDir)     = 0  : dump;
+codetable[2] local6thModelComponent ('2.231.[localOriginOfProduct:l].table',masterDir,localDir)     = 0  : dump;
+codetable[2] local7thModelComponent ('2.231.[localOriginOfProduct:l].table',masterDir,localDir)     = 0  : dump;
+codetable[2] local8thModelComponent ('2.231.[localOriginOfProduct:l].table',masterDir,localDir)     = 0  : dump;
+#
+# Version number of model (composition): v<Major>.<Minor>.<Patch>
+#
+codetable[2] localMeaningOfModelVersion ('2.232.table',masterDir,localDir) = 0  : dump;
+unsigned[1]  localModelVersionMajor                                        = 0  : dump;
+unsigned[1]  localModelVersionMinor                                        = 0  : dump;
+unsigned[1]  localModelVersionPatch                                        = 0  : dump;
+#
+# Additional information on production circumstances: 
+#
+codetable[2] localProductionContext ('2.233.table',masterDir,localDir) = 0  : dump;
+codetable[2] localProductionNote ('2.234.table',masterDir,localDir)    = 0  : dump;
+codetable[2] localProject ('2.235.table',masterDir,localDir)           = 0  : dump;
+#
+# General-purpose index identifier: localConsecutiveNumber = 1, 2, 3, ..., localLastConsecutiveNumber
+#
+codetable[2] localMeaningOfConsecutiveNumbering ('2.236.table',masterDir,localDir) = 0  : dump;
+unsigned[4]  localLastConsecutiveNumber                                            = 0  : dump;
+unsigned[4]  localConsecutiveNumber                                                = 0  : dump;
+#
+# Processing history of product:
+#
+unsigned[1]  localNumberOfProductHistoryEventsInUse                         = 0  : dump;
+codetable[2] local1stProductHistoryEvent ('2.237.table',masterDir,localDir) = 0  : dump;
+codetable[2] local2ndProductHistoryEvent ('2.237.table',masterDir,localDir) = 0  : dump;
+codetable[2] local3rdProductHistoryEvent ('2.237.table',masterDir,localDir) = 0  : dump;
+codetable[2] local4thProductHistoryEvent ('2.237.table',masterDir,localDir) = 0  : dump;
+#
+# Product versioning: localProductVersionNumber = 1 (= original product), 2 (= 1st product update), 3 (= 2nd product update), ...
+#
+unsigned[2] localProductVersionNumber = 1  : dump;
+#
+# Additional general-purpose (table-only) attributes:
+#
+unsigned[1]  localNumberOfAttributesInUse                                                        = 0  : dump;
+codetable[2] localMeaningOf1stAttribute ('2.238.table',masterDir,localDir)                       = 0  : dump;
+codetable[2] local1stAttribute ('2.238.[localMeaningOf1stAttribute:l].table',masterDir,localDir) = 0  : dump;
+codetable[2] localMeaningOf2ndAttribute ('2.238.table',masterDir,localDir)                       = 0  : dump;
+codetable[2] local2ndAttribute ('2.238.[localMeaningOf2ndAttribute:l].table',masterDir,localDir) = 0  : dump;
+#
+# Additional general-purpose numerical attributes:
+#
+unsigned[1]  localNumberOfNumericalAttributesInUse                                                                 = 0  : dump;
+codetable[2] localMeaningOf1stNumericalAttribute ('2.238.table',masterDir,localDir)                                = 0  : dump;
+codetable[2] local1stNumericalAttribute ('2.238.[localMeaningOf1stNumericalAttribute:l].table',masterDir,localDir) = 0  : dump;
+signed[1]    localScaleFactorOf1stNumericalAttribute                                                               = 0  : dump;
+unsigned[4]  localScaledValueOf1stNumericalAttribute                                                               = 0  : dump;
+codetable[2] localMeaningOf2ndNumericalAttribute ('2.238.table',masterDir,localDir)                                = 0  : dump;
+codetable[2] local2ndNumericalAttribute ('2.238.[localMeaningOf2ndNumericalAttribute:l].table',masterDir,localDir) = 0  : dump;
+signed[1]    localScaleFactorOf2ndNumericalAttribute                                                               = 0  : dump;
+unsigned[4]  localScaledValueOf2ndNumericalAttribute                                                               = 0  : dump;
+#
+# Additional general-purpose universally unique identifier (128 bit):
+#
+unsigned[1]  localNumberOfUUIDAttributesInUse                                  = 0  : dump;
+codetable[2] localMeaningOf1stUUIDAttribute ('2.238.table',masterDir,localDir) = 0  : dump;
+byte[16]     local1stUUIDAttribute                                             = "00000000000000000000000000000000"  : dump;
+codetable[2] localMeaningOf2ndUUIDAttribute ('2.238.table',masterDir,localDir) = 0  : dump;
+byte[16]     local2ndUUIDAttribute                                             = "00000000000000000000000000000000"  : dump;
+#
+# Additional general-purpose date:
+#
+codetable[2] localMeaningOfDateAttribute ('2.238.table',masterDir,localDir) = 0  : dump;
+unsigned[2]  localDateAttributeYear                                         = 0  : dump;
+unsigned[1]  localDateAttributeMonth                                        = 0  : dump;
+unsigned[1]  localDateAttributeDay                                          = 0  : dump;
+unsigned[1]  localDateAttributeHour                                         = 0  : dump;
+unsigned[1]  localDateAttributeMinute                                       = 0  : dump;
+unsigned[1]  localDateAttributeSecond                                       = 0  : dump;
+unsigned[2]  localDateAttributeMillisecond                                  = 0  : dump;
+#
+# Software package that was used to generate the GRIB message:
+#
+codetable[2] localGRIBMessageGeneratedBySoftwarePackage ('2.239.table',masterDir,localDir)                                          = 0  : dump;
+codetable[2] localMeaningOfSoftwarePackageVersion ('2.239.[localGRIBMessageGeneratedBySoftwarePackage:l].table',masterDir,localDir) = 0  : dump;
+unsigned[1]  localSoftwarePackageVersionMajor = 0  : dump;
+unsigned[1]  localSoftwarePackageVersionMinor = 0  : dump;
+unsigned[1]  localSoftwarePackageVersionPatch = 0  : dump;
+#----------------------------------------------------------------------------------------
+
+########################################################
+#                                                      #
+#           Definition of Template Concepts            #
+#                                                      #
+########################################################
+
+#
+# Derived concept key: localConceptIsICONARTNWP
+# Possible values:
+# 1) localConceptIsICONARTNWP = not_found
+#    => Not this but another template is used in the GRIB message, so ecCodes does not know about the concept key localConceptIsICONARTNWP.
+# 2) localConceptIsICONARTNWP = 0
+#    => ICON-ART was NOT used to generate the product.
+# 3) localConceptIsICONARTNWP = 1
+#    => ICON-ART was used to generate the product.
+#
+
+#----------------------------------------------------------------------------------------
+#
+# Table 2.231 ("Local Information on the Origin of the Product"):
+# - 1 = "Product is generated by a process that is based on a model or model composition described by the following 17 octets"
+# Table 2.231.1 ("Local Models and Model Components"):
+# - 1000 = "ICON-NWP"
+# - 2000 = "ART-NWP"
+#
+constant tab231_OriginatesFromModel = 1 ;
+constant tab231p1_ICONNWP           = 1000 ;
+constant tab231p1_ARTNWP            = 2000 ;
+
+if (  (localOriginOfProduct == tab231_OriginatesFromModel) 
+   && (localNumberOfModelComponentsInUse > 1) 
+   && (localDrivingModelComponent == tab231p1_ICONNWP) ) {
+
+  if (  (local2ndModelComponent == tab231p1_ARTNWP) || (local3rdModelComponent == tab231p1_ARTNWP) 
+     || (local4thModelComponent == tab231p1_ARTNWP) || (local5thModelComponent == tab231p1_ARTNWP) 
+     || (local6thModelComponent == tab231p1_ARTNWP) || (local7thModelComponent == tab231p1_ARTNWP) 
+     || (local8thModelComponent == tab231p1_ARTNWP) ) {
+     
+    constant localConceptIsICONARTNWP = 1  : dump;
+    
+  } else {
+  
+    constant localConceptIsICONARTNWP = 0  : dump;
+    
+  }
+
+} else {
+
+  constant localConceptIsICONARTNWP   = 0  : dump;
+
+}
+#----------------------------------------------------------------------------------------

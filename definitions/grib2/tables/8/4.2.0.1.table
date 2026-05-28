@@ -86,12 +86,9 @@
 84 84 Specific cloud ice water content (kg kg-1)
 85 85 Specific rain water content (kg kg-1)
 86 86 Specific snow water content (kg kg-1)
-# 87-89 Reserved
 90 90 Total kinematic moisture flux	(kg kg-1 m s-1)
 91 91 u-component (zonal) kinematic moisture flux (kg kg-1 m s-1)
 92 92 v-component (meridional) kinematic moisture flux (kg kg-1 m s-1)
-# 93-191 Reserved 
-# 192-254 Reserved for local use 
 192 192 vertical integral of divergence of total water content (s) (kg m**-2)
 193 193 subgrid scale cloud water (kg kg**-1)
 194 194 subgridscale cloud ice (kg kg**-1)

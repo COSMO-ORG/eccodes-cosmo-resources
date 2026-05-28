@@ -20,8 +20,6 @@
 18 18 Snow temperature (top of snow) (K)
 19 19 Turbulent transfer coefficient for heat (Numeric)
 20 20 Turbulent diffusion coefficient for heat (m2 s-1)
-# 21-191 Reserved 
-# 192-254 Reserved for local use 
 192 192 Temperature tendency due to convection (K s**-1)
 193 193 Temperature tendency due to grid scale precipation (K s**-1)
 255 255 Missing (-)
