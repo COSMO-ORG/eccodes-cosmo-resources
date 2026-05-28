@@ -35,8 +35,6 @@
 33 33 Sunshine duration (s)
 34 34 Surface long wave effective total cloudiness (Numeric)
 35 35 Surface short wave effective total cloudiness (Numeric)
-# 36-191 Reserved
-# 192-254 Reserved for local use
 192 192 cloud base above msl, shallow convection (m)
 193 193 Cloud top above msl, shallow convection (m)
 194 194 base index (vertical level) of main convective cloud (i) (1)

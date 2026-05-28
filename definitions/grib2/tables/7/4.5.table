@@ -9,9 +9,7 @@
 7 TP Tropopause 
 8 AU Nominal top of the atmosphere 
 9 9 Sea bottom 
-# 10-19 Reserved
 20 20 Isothermal level (K)
-#21-99 Reserved
 100 P Isobaric surface (Pa)
 101 MSL Mean sea level
 102 HMSL Specific altitude above mean sea level (m)
@@ -24,20 +22,14 @@
 109 pv Potential vorticity surface (K m2 kg-1 s-1)
 110 110 Reserved
 111 111 Eta level
-# 112 Reserved
 113 Logarithmic hybrid coordinate - Validation
 114 114 Snow level (Numeric)
-# 115 - 116 Reserved
 117 117 Mixed layer depth (m)
 118 118 Hybrid height level
 119 119 Hybrid pressure level
 120 120 Pressure thickness Pa Validation
-# 121-149 Reserved
 150 Generalized vertical height coordinate (4) Validation
-# 151-159 Reserved
 160 160 Depth below sea level (m)
-#161-191 Reserved
 192 192 mixed layer related to atmosphere
 193 193 mostly unstable related to atmosphere
-#194-254 Reserved for local use
 255 255 Missing

@@ -2,6 +2,7 @@
 123 123  Synthetic radar volume scan in ensemble system
 124 124  Synthetic radar volume scan in deterministic system
 125 125  Observational radar volume scan
+230 230  Model composition
 250 250  COSMO
 252 252  Ensemble system incl. postprocessing
 253 253  Ensemble system

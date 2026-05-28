@@ -1,0 +1,9 @@
+# (C) Copyright 2005- ECMWF.
+
+# Template component: 4.local_uuid_attribute.def
+
+# Meaning of universally unique identifier (UUID) attribute (65535 => Missing)
+codetable[2] meaningOfUUIDAttribute ('4.meaningOfUUIDAttribute.table',masterDir,localDir) = 65535 : dump;
+
+# Universally unique identifier (UUID) attribute
+byte[16] UUIDAttribute = "00000000000000000000000000000000" : dump;

@@ -1,0 +1,6 @@
+# (C) Copyright 2005- ECMWF.
+
+# Template component: 4.local_template_configuration.def
+
+# Type of template configuration (65535 => Missing)
+codetable[2] typeOfTemplateConfiguration ('4.typeOfTemplateConfiguration.table',masterDir,localDir) = 65535 : dump;

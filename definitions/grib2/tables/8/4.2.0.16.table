@@ -5,7 +5,6 @@
 3 3 Echo top (m)
 4 4 Reflectivity (dB)
 5 5 Composite reflectivity (dB)
-# 6-191 Reserved 
 192 192 precipitation,qualified,BRD (kg m-2)
 193 193 precipitation FEZE-Rohprodukt,BRD (kg m-2)
 194 194 precipitation phase,BRD (1)
@@ -13,5 +12,4 @@
 196 196 snow rate,BRD (m)
 197 197 snow rate,qualified,BRD (m)
 198 198 radar Europe(dBz)
-# 192-254 Reserved for local use 
 255 255 Missing

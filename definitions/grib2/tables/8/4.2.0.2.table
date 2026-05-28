@@ -33,8 +33,6 @@
 31 31 Turbulent diffusion coefficient for momentum (m2 s-1)
 32 32 eta coordinate vertical velocity (s-1)
 33 33 Wind fetch (m)
-# 34-191 Reserved 
-# 192-254 Reserved for local use
 192 192 zonal wind tendency due to convection (m s**-1)
 193 193 meridional wind tendency due to convection (m s**-1)
 194 194 zonal wind tendency due to subgrid scale oro. (m s**-1)

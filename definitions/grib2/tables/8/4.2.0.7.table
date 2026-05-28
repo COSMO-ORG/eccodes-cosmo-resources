@@ -15,8 +15,6 @@
 13 13 Showalter index (K)
 14 14 Reserved 
 15 15 Updraft helicity (m2 s-2)
-# 16-191 Reserved 
-# 192-254 Reserved for local use
 192 192 supercell detection index 1 (rot. up+down drafts) (s**-1)
 193 193 supercell detection index 2 (only rot. up drafts) (s**-1)
 255 255 Missing (-)

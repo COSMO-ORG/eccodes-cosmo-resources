@@ -33,7 +33,8 @@ transient productionStatusOfProcessedData=0;
 position offsetSection1;
 section_length[3] section1Length ;
 meta section1Pointer section_pointer(offsetSection1,section1Length,1);
-constant wrongPadding=0;
+# Aenderung 2.42.0, bisher constant wrongPadding=0;
+constant wrongPadding=0 : hidden;
 
 #  GRIB tables Version No.
 # (currently 3 for international exchange)
@@ -145,6 +146,12 @@ if(	indicatorOfTypeOfLevel == 109 ||
 {
 	  alias mars.levelist = level;
 }
+# mit 2.30.2 nicht mehr in definitions ecmwf vorhanden, auskommentiert AT, 15.06.2023
+# Aus Version 2.29.0 ezmwf-definitions uebernommen
+# if (indicatorOfTypeOfLevel == 117) {
+#     # See ECC-1081
+#     constant levelFactor = 6;
+# }
 
 unsigned[1] yearOfCentury : edition_specific ;
 unsigned[1] month  ;
@@ -166,7 +173,8 @@ codetable[1] timeRangeIndicator ('5.table',tablesLocalDir,tablesMasterDir) = 1 :
 
 unsigned[2] numberIncludedInAverage;
 
-meta mybits bits(numberIncludedInAverage,0,12);
+# mit 2.30.0 nicht mehr in definitions ezmw vorhanden, auskommentiert IK, 17.04.2023
+# meta mybits bits(numberIncludedInAverage,0,12);
 
 unsigned[1] numberMissingFromAveragesOrAccumulations;
 unsigned[1] centuryOfReferenceTimeOfData ;
@@ -190,24 +198,19 @@ if(table2Version >= 128) {
 #}
 
 concept paramIdECMF (defaultParameter,"paramId.def",conceptsMasterDir,conceptsLocalDirECMF): no_copy;
-# to_del: concept paramId (paramIdECMF,"paramId.def",conceptsMasterDir,conceptsLocalDirAll): long_type,dump;
 concept paramId (paramIdECMF,"paramId.def",conceptsDir2,conceptsDir1): long_type,dump;
 # transient pid = paramId : hidden;
 
-concept cfNameECMF(defaultName,"cfName.def",conceptsMasterDir,conceptsLocalDirECMF) : dump,no_copy,read_only;
-# to_del:concept cfName(cfNameECMF,"cfName.def",conceptsMasterDir,conceptsLocalDirAll) : dump,no_copy,read_only;
+concept cfNameECMF(defaultName,"cfName.def",conceptsMasterDir,conceptsLocalDirECMF) : no_copy,read_only;
 concept cfName(cfNameECMF,"cfName.def",conceptsDir2,conceptsDir1) : dump,no_copy,read_only;
 
-concept cfVarNameECMF(defaultName,"cfVarName.def",conceptsMasterDir,conceptsLocalDirECMF) : dump,no_copy,read_only;
-# to_del: concept cfVarName(cfVarNameECMF,"cfVarName.def",conceptsMasterDir,conceptsLocalDirAll) : dump,no_copy,read_only;
+concept cfVarNameECMF(defaultName,"cfVarName.def",conceptsMasterDir,conceptsLocalDirECMF) : no_copy,read_only;
 concept cfVarName(cfVarNameECMF,"cfVarName.def",conceptsDir2,conceptsDir1) : dump,no_copy,read_only;
 
 concept unitsECMF(defaultName,"units.def",conceptsMasterDir,conceptsLocalDirECMF) : no_copy,read_only;
-# to_del: concept units(unitsECMF,"units.def",conceptsMasterDir,conceptsLocalDirAll) : dump,no_copy,read_only;
 concept units(unitsECMF,"units.def",conceptsDir2,conceptsDir1) : dump,no_copy,read_only;
 
-concept nameECMF(defaultName,"name.def",conceptsMasterDir,conceptsLocalDirECMF) : dump,no_copy,read_only;
-# to_del: concept name(nameECMF,"name.def",conceptsMasterDir,conceptsLocalDirAll) : dump,no_copy,read_only;
+concept nameECMF(defaultName,"name.def",conceptsMasterDir,conceptsLocalDirECMF) : no_copy,read_only;
 concept name(nameECMF,"name.def",conceptsDir2,conceptsDir1) : dump,no_copy,read_only;
 
 signed[2] decimalScaleFactor :dump;
@@ -287,6 +290,8 @@ if (centre == 34 && subCentre == 241)
 
 meta time.validityDate validity_date(dataDate,dataTime,step,stepUnits);
 meta time.validityTime validity_time(dataDate,dataTime,step,stepUnits);
+# ab Version 2.32.0 hinzugefuegt
+meta validityDateTime julian_date(validityDate, validityTime) : no_copy;
 
 transient deleteLocalDefinition=0;
 
@@ -360,7 +365,8 @@ section_padding section1Padding : read_only;
 concept shortNameECMF (defaultShortName,"shortName.def",conceptsMasterDir,conceptsLocalDirECMF) : no_copy;
 # to_del: concept ls.shortName (shortNameECMF,"shortName.def",conceptsMasterDir,conceptsLocalDirAll) : no_copy,dump;
 concept ls.shortName (shortNameECMF,"shortName.def",conceptsDir2,conceptsDir1) : no_copy,dump;
-meta ifsParam ifs_param(paramId,type);
+# 2.42.0 auskommentiert
+# meta ifsParam ifs_param(paramId,type);
 
 alias parameter.paramId=paramId;
 alias parameter.shortName=shortName;

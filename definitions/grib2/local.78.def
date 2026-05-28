@@ -35,7 +35,7 @@ alias grib2LocalSectionNumber=localDefinitionNumber;
       || (localDefinitionNumber == 28 )
       || (localDefinitionNumber == 250 ) || (localDefinitionNumber == 254 ) 
       || (localDefinitionNumber == 123 ) || (localDefinitionNumber == 124 ) 
-      || (localDefinitionNumber == 125 ) ){
+      || (localDefinitionNumber == 125 ) || (localDefinitionNumber == 230 ) ){
       template  localSection  "grib2/local.78.[localDefinitionNumber:l].def";
    } else {
       section_padding section2Padding : read_only;

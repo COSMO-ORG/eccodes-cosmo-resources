@@ -14,8 +14,6 @@
 12 12 Reflectivity of rain - validation (dB)
 13 13 Reflectivity of graupel - validation (dB)
 14 14 Reflectivity of hail - validation (dB)
-# 15-191 Reserved 
-# 192-254 Reserved for local use
 192 192 Delay of the GPS signal trough the (total) atm. (m)
 193 193 Delay of the GPS signal trough wet atmos. (m)
 194 194 Delay of the GPS signal trough dry atmos. (m)
