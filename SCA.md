@@ -1,2 +1,2 @@
-Source Code Administrator is [Jean-Marie Bettems / MeteoSwiss](https://github.com/jmbettems)
+Source Code Administrator is [Petra Baumann / MeteoSwiss](https://github.com/petrabaumann)
 
