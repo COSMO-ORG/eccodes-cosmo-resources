@@ -9236,3 +9236,39 @@
 	 parameterNumber = 42 ;
 	}
 
+#paramId: 503792
+#Height (altitude) above mean sea level of the tropopause
+'HAMSL_TROPOP' = {
+	 discipline = 0 ;
+	 parameterCategory = 3 ;
+	 parameterNumber = 33 ;
+	 typeOfFirstFixedSurface = 7 ;
+	}
+
+#paramId: 503793
+#Temperature at height of tropopause
+'T_TROPOP' = {
+	 discipline = 0 ;
+	 parameterCategory = 0 ;
+	 parameterNumber = 0 ;
+	 typeOfFirstFixedSurface = 7 ;
+	}
+
+#paramId: 503794
+#Pressure at height of tropopause
+'P_TROPOP' = {
+	 discipline = 0 ;
+	 parameterCategory = 3 ;
+	 parameterNumber = 0 ;
+	 typeOfFirstFixedSurface = 7 ;
+	}
+
+#paramId: 503795
+#Freezing rain precipitation (accumulation)
+'FRZ_RAIN' = {
+	 discipline = 0 ;
+	 parameterCategory = 1 ;
+	 parameterNumber = 67 ;
+	 typeOfStatisticalProcessing = 1 ;
+	}
+
