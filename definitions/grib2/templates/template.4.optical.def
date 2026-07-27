@@ -15,9 +15,20 @@ meta secondWavelength from_scale_factor_scaled_value(scaleFactorOfSecondWaveleng
 alias firstWavelengthInMetres = firstWavelength;
 alias secondWavelengthInMetres = secondWavelength;
 
-constant billion = 1000000000 : hidden;
-meta firstWavelengthInNanometres  multdouble(firstWavelength, billion) : read_only;
-meta secondWavelengthInNanometres multdouble(secondWavelength, billion) : read_only;
+# Anpassung mit ecCodes/2.47.0
+# constant billion = 1000000000 : hidden;
+# meta firstWavelengthInNanometres  multdouble(firstWavelength, billion) : read_only;
+# meta secondWavelengthInNanometres multdouble(secondWavelength, billion) : read_only;
+
+# See ECC-2230
+if (scaleFactorOfFirstWavelength == 9) {
+    alias firstWavelengthInNanometres = scaledValueOfFirstWavelength;
+    alias secondWavelengthInNanometres = scaledValueOfSecondWavelength;
+} else {
+    constant billion = 1000000000 : hidden;
+    meta firstWavelengthInNanometres  multdouble(firstWavelength, billion) : read_only;
+    meta secondWavelengthInNanometres multdouble(secondWavelength, billion) : read_only;
+}
 
 # Aenderung mit Version 2.44.0 --> auskommentiert
 # All post-MTG2 data (MTG2Switch != 0) will have the wavelength key

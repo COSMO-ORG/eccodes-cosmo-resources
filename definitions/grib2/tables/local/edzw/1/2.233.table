@@ -11,14 +11,15 @@
 #
 0 0  Unused
 #
-# 1 - 1000 Reserved for supplements to the 'generatingProcessIdentifier'
-#          ('generatingProcessIdentifier' + 'localProductionContext' should support the allocation of products to database categories)
+# 1 - 10000 Reserved for supplements to the 'generatingProcessIdentifier'
+#           ('generatingProcessIdentifier' + 'localProductionContext' should support the allocation of products to database categories)
 #
 # 1 - 500 Reserved for machine-learning-based (inference) models.
 #
 # 1 - 300 Reserved for AICON
 #
 001 acXgl acXgl (AICON global)
+002 acXeu acXeu (AICON europe)
 #
 255 255  Conforms to Missing
 #
@@ -29,5 +30,25 @@
 # 321 - 340 Reserved for KANGU
 #
 321 kaXgl kaXgl (KANGU global)
+#
+# 1000 - 1999 Reserved for ICON-Atmosphere
+#
+1001 atmoXgl atmoXgl (ICON-Atmosphere global)
+1002 atmoXeu atmoXeu (ICON-Atmosphere europe)
+1003 atmoXeuna2 atmoXeuna2 (ICON-Atmosphere europe, northern africa and north atlantic)
+#
+# 2000 - 2999 Reserved for ICON-ART (Aerosols and Reactive Trace gases)
+#
+2001 artXgl artXgl (ICON-ART global)
+2002 artXeu artXeu (ICON-ART europe)
+2003 artXeuna2 artXeuna2 (ICON-ART europe, northern africa and north atlantic)
+#
+# 3000 - 3999 Reserved for ICON-Ocean
+#
+3001 oceanXgl oceanXgl (ICON-Ocean global)
+#
+# 4000 - 4999 Reserved for ICON-Waves
+#
+4001 wavesXgl wavesXgl (ICON-Waves global)
 #
 65535 65535  Missing

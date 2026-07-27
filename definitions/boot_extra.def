@@ -1,0 +1,62 @@
+# Override this file to add your own additional definitions.
+# e.g., check for ecCodes library version compatibility
+
+# meta ecmwfLibraryVersion library_version() : string_type, hidden, read_only;
+# 
+# concept isCompatible(unknown) {
+#     'yes' = { true=is_one_of(ecmwfLibraryVersion, '2.45.0', '2.44.0' ); }
+#     'no' = { ecmwfLibraryVersion = '2.43.0'; }
+# } : string_type, hidden, read_only;
+# 
+# if (isCompatible is 'unknown') {
+#     print("/dev/stderr") "WARNING: ecCodes [ecmwfLibraryVersion] compatibility could not be determined. Please make sure ECCODES_DEFINITION_PATH environment variable is set correctly.";
+# }
+# 
+# if (isCompatible is 'no') {
+#     print("/dev/stderr") "ERROR: ecCodes [ecmwfLibraryVersion] is NOT compatible with loaded definitions. Please make sure ECCODES_DEFINITION_PATH environment variable is set correctly.";
+#     assert(0 && "Quitting ...");
+# }
+#
+# Please note: print("/dev/stderr") "..." may not work on Windows systems. Please use print "..." instead.
+
+#-----------------------------------------
+# For DWD definitions (definitions.edzw):
+#-----------------------------------------
+
+#
+# Software version of the ecCodes API (compare console command 'codes_info -v')
+#
+meta ecmwfLibraryVersion library_version() : string_type, hidden, read_only;
+
+#
+# Version of the DWD ecCodes definitions of which this file is part
+#
+constant edzwDefinitionFilesVersion = '2.47.0' ;
+###constant edzwDefinitionFilesVersion = '2.47.0' ;
+
+#
+# Allow to switch off version compatibility check via environment variable
+#
+version_check_off = getenv("ECCODES_VERSION_CHECK_OFF","0") ;
+
+if (version_check_off == 0) {
+
+  #
+  # Compare API and definition versions
+  #
+  if (!(ecmwfLibraryVersion is edzwDefinitionFilesVersion)) {
+
+    #
+    # Inform user about mismatch
+    #
+    print("/dev/stderr") " " ;
+    print("/dev/stderr") "---------------------------------------------------------------------------------------------------------------------------------------------------" ;
+    print("/dev/stderr") "WARNING: definitions.edzw version [edzwDefinitionFilesVersion] is NOT compatible with ecCodes library version [ecmwfLibraryVersion]!" ;
+    print("/dev/stderr") "Please check environment settings and/or use ECCODES_DEFINITION_PATH environment variable for including compatible definitions.edzw version [ecmwfLibraryVersion]." ;
+    print("/dev/stderr") "---------------------------------------------------------------------------------------------------------------------------------------------------" ;
+    print("/dev/stderr") " " ;
+
+  }
+
+}
+

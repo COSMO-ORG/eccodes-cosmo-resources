@@ -111,6 +111,8 @@ meta is_aerosol          g2_aerosol(productDefinitionTemplateNumber, stepType, 0
 meta is_aerosol_optical  g2_aerosol(productDefinitionTemplateNumber, stepType, 1);
 
 meta is_probability_fcst g2_probability(productDefinitionTemplateNumber, stepType);
+# neue Zeile 2.44.0
+meta is_wave_period_range g2_wave_period_range(productDefinitionTemplateNumber, stepType);
 
 transient setCalendarId = 0 ;
 transient deleteCalendarId = 0 ;
@@ -126,15 +128,11 @@ constant conceptsMasterDir="grib2" : hidden;
 constant conceptsLocalDirAll="grib2/localConcepts/[centre:s]" : hidden;
 constant conceptsLocalDirECMF="grib2/localConcepts/ecmf" : hidden;
 
-# SD-121726
-#if (preferLocalConcepts) {
-#  constant conceptsDir1 = conceptsMasterDir : hidden;
-#  constant conceptsDir2 = conceptsLocalDirAll : hidden;
-#} else {
-#  constant conceptsDir1 = conceptsLocalDirAll : hidden;
-#  constant conceptsDir2 = conceptsMasterDir : hidden;
-#}
-
-meta conceptsDir1 g2_concept_dir(preferLocalConcepts, conceptsMasterDir, conceptsLocalDirAll, datasetForLocal, 1);
-meta conceptsDir2 g2_concept_dir(preferLocalConcepts, conceptsMasterDir, conceptsLocalDirAll, datasetForLocal, 2);
+if (preferLocalConcepts) {
+  constant conceptsDir1 = conceptsMasterDir : hidden;
+  constant conceptsDir2 = conceptsLocalDirAll : hidden;
+} else {
+  constant conceptsDir1 = conceptsLocalDirAll : hidden;
+  constant conceptsDir2 = conceptsMasterDir : hidden;
+}
 
