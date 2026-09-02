@@ -1,4 +1,4 @@
-# Override this file to add your own additional definitions.
+# Override this file to add your own additional definitions. In Zeile 37 und 38 die neue ecCodes-Version eintragen.
 # e.g., check for ecCodes library version compatibility
 
 # meta ecmwfLibraryVersion library_version() : string_type, hidden, read_only;
@@ -30,6 +30,9 @@ meta ecmwfLibraryVersion library_version() : string_type, hidden, read_only;
 
 #
 # Version of the DWD ecCodes definitions of which this file is part
+#
+#
+# HIER die neue ecCodes-Version eintragen:
 #
 constant edzwDefinitionFilesVersion = '2.47.0' ;
 ###constant edzwDefinitionFilesVersion = '2.47.0' ;
